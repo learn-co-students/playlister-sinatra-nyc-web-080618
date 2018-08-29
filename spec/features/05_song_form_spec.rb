@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+require "pry"
 describe "Song Forms" do
   let(:artist_name) { "Person with a Face" }
   let(:genre_1_name) { "Hippity Hop" }
@@ -96,6 +96,7 @@ describe "Song Forms" do
     context "changing a song's artist" do
       it "updates the song's artist" do
         fill_in "Artist Name", with: "Some Nobody"
+      #  binding.pry
         click_on "Save"
 
         expect(page).to have_content("Successfully updated song.")
